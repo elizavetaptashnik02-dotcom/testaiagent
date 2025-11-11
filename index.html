@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AuraMatch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="top-bar">
+        <div class="branding">
+          <div class="logo">AuraMatch</div>
+          <p class="tagline">Найди тех, с кем совпадают вибрации</p>
+        </div>
+        <button class="subscription-button" data-open-subscription>
+          Подписки
+        </button>
+      </header>
+
+      <main class="content">
+        <section class="card-stack" aria-live="polite">
+          <template id="profile-card-template">
+            <article class="profile-card">
+              <div class="profile-photo">
+                <img src="" alt="" />
+                <div class="gradient-overlay"></div>
+                <div class="profile-info">
+                  <h2 class="name"></h2>
+                  <p class="meta"></p>
+                </div>
+              </div>
+              <div class="profile-details">
+                <p class="bio"></p>
+                <ul class="tags"></ul>
+              </div>
+            </article>
+          </template>
+        </section>
+
+        <nav class="action-bar" aria-label="Действия">
+          <button class="action-button dislike" data-action="dislike" aria-label="Нет">
+            <span>–</span>
+          </button>
+          <button class="action-button rewind" data-action="rewind" aria-label="Вернуть">
+            <span>↺</span>
+          </button>
+          <button class="action-button superlike" data-action="superlike" aria-label="Суперлайк">
+            <span>★</span>
+          </button>
+          <button class="action-button like" data-action="like" aria-label="Да">
+            <span>+</span>
+          </button>
+        </nav>
+      </main>
+    </div>
+
+    <div class="subscription-modal" data-subscription-modal hidden>
+      <div class="subscription-dialog" role="dialog" aria-modal="true">
+        <button class="close-button" data-close-subscription aria-label="Закрыть"></button>
+        <h2>Премиум-подписки</h2>
+        <p class="modal-subtitle">
+          Ускорь знакомство с теми, кто тебе действительно интересен
+        </p>
+        <div class="plans">
+          <article class="plan-card popular">
+            <h3>Aura+ <span>Популярный выбор</span></h3>
+            <p class="price">499 ₽/мес</p>
+            <ul>
+              <li>Неограниченные лайки</li>
+              <li>Перемотка последних свайпов</li>
+              <li>Золотая рамка в профиле</li>
+            </ul>
+            <button class="primary">Попробовать</button>
+          </article>
+          <article class="plan-card">
+            <h3>AuraPro</h3>
+            <p class="price">899 ₽/мес</p>
+            <ul>
+              <li>Суперлайки каждый день</li>
+              <li>Просмотр понравившихся заранее</li>
+              <li>Премиум-фильтры по интересам</li>
+            </ul>
+            <button class="secondary">Выбрать</button>
+          </article>
+          <article class="plan-card">
+            <h3>AuraElite</h3>
+            <p class="price">1499 ₽/мес</p>
+            <ul>
+              <li>Отметка «Лучший матч»</li>
+              <li>Доступ к закрытым мероприятиям</li>
+              <li>Эксклюзивные подборки профилей</li>
+            </ul>
+            <button class="secondary">Оформить</button>
+          </article>
+        </div>
+        <p class="legal">
+          Подписка автоматически продлевается. Отмена доступна в любой момент в
+          настройках профиля.
+        </p>
+      </div>
+    </div>
+
+    <template id="result-toast-template">
+      <div class="result-toast" role="status"></div>
+    </template>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
