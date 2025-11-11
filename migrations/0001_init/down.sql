@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS sessions;
+DROP TABLE IF EXISTS subscriptions;
+DROP TABLE IF EXISTS subscription_plans;
+DROP TABLE IF EXISTS matches;
+DROP TABLE IF EXISTS swipes;
+DROP TABLE IF EXISTS profiles;
+DROP TABLE IF EXISTS users;
